@@ -10,5 +10,8 @@
 ![2](https://user-images.githubusercontent.com/31002981/169663019-c6406963-9b1c-4d6d-aa9d-ac92459185a1.png)
 ![3](https://user-images.githubusercontent.com/31002981/169663026-df8fa1ad-c1b7-47f1-9106-b7a512fa6914.png)
 
-
+## TODO
+- 使用QThread执行耗时任务，如Excel转图片时的post请求；
+- 使用progressBar；
+- 添加更多其他小工具；
 
