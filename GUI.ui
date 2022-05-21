@@ -36,7 +36,7 @@
        </font>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tab_uncompress">
        <attribute name="title">
@@ -69,8 +69,16 @@
           <height>41</height>
          </rect>
         </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
         <property name="cursor" stdset="0">
          <cursorShape>IBeamCursor</cursorShape>
+        </property>
+        <property name="inputMethodHints">
+         <set>Qt::ImhMultiLine</set>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -79,7 +87,7 @@
          <enum>QFrame::Sunken</enum>
         </property>
         <property name="acceptRichText">
-         <bool>true</bool>
+         <bool>false</bool>
         </property>
         <property name="placeholderText">
          <string>请拖入文件</string>
@@ -111,6 +119,11 @@
           <width>531</width>
           <height>41</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
         </property>
         <property name="cursor" stdset="0">
          <cursorShape>IBeamCursor</cursorShape>
@@ -185,6 +198,11 @@
           <width>531</width>
           <height>41</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
         </property>
         <property name="cursor" stdset="0">
          <cursorShape>IBeamCursor</cursorShape>
