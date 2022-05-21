@@ -4,6 +4,13 @@
 - 压缩与解压部分的博客:https://blog.csdn.net/sxf1061700625/article/details/123632095    
 - excel转图片部分的博客：https://xfxuezhang.blog.csdn.net/article/details/124898696   
 
+## 文件简介
+- `GUI.py`和`GUI.ui`：绘制界面相关
+- `convert.bat`：使用pyuic5将ui转为py
+- `UnRAR64.dll`和`compress.py`：压缩解压相关
+- `excel2image.py`：excel转图片相关
+- `main.py`：主入口
+
 
 ## 效果图
 ![1](https://user-images.githubusercontent.com/31002981/169663001-60e740b0-c297-4c9c-9afe-d311305b8537.png)
