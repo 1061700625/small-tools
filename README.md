@@ -7,6 +7,7 @@
 ## 文件简介
 - `GUI.py`和`GUI.ui`：绘制界面相关
 - `convert.bat`：使用pyuic5将ui转为py
+- `打包.bat`和`main.spec`：使用pyinstaller进行打包为exe
 - `UnRAR64.dll`和`compress.py`：压缩解压相关
 - `excel2image.py`：excel转图片相关
 - `main.py`：主入口
@@ -18,7 +19,8 @@
 ![3](https://user-images.githubusercontent.com/31002981/169663026-df8fa1ad-c1b7-47f1-9106-b7a512fa6914.png)
 
 ## TODO
-- 使用QThread执行耗时任务，如Excel转图片时的post请求；
-- 使用progressBar；
-- 添加更多其他小工具；
+- 使用QThread执行耗时任务，如Excel转图片时的post请求
+- 使用progressBar
+- debug窗口实时滚动
+- 添加更多其他小工具
 
