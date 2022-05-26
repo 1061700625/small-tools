@@ -9,7 +9,7 @@
 - `convert.bat`：使用pyuic5将ui转为py
 - `打包.bat`和`main.spec`：使用pyinstaller进行打包为exe
 - `UnRAR64.dll`和`compress.py`：压缩解压相关
-- `excel2image.py`：excel转图片相关
+- `convertor.py`：excel/word转图片相关
 - `main.py`：主入口
 
 
