@@ -175,9 +175,9 @@
       </widget>
       <widget class="QWidget" name="tab_excel2image">
        <attribute name="title">
-        <string>Excel转图片</string>
+        <string>Excel/Word转图片</string>
        </attribute>
-       <widget class="QProgressBar" name="progressBar_excel2image_progress">
+       <widget class="QProgressBar" name="progressBar_wps2image_progress">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -190,7 +190,7 @@
          <number>0</number>
         </property>
        </widget>
-       <widget class="QTextEdit" name="textEdit_excel2image_filePath">
+       <widget class="QTextEdit" name="textEdit_wps2image_filePath">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -220,7 +220,7 @@
          <string>请拖入文件</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_excel2image_start">
+       <widget class="QPushButton" name="pushButton_wps2image_start">
         <property name="geometry">
          <rect>
           <x>570</x>
@@ -337,10 +337,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_excel2image_start</sender>
+   <sender>pushButton_wps2image_start</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
-   <slot>excel2image_start()</slot>
+   <slot>wps2image_start()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>705</x>
@@ -356,6 +356,6 @@
  <slots>
   <slot>uncompress_start()</slot>
   <slot>compress_start()</slot>
-  <slot>excel2image_start()</slot>
+  <slot>wps2image_start()</slot>
  </slots>
 </ui>

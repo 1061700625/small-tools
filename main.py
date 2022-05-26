@@ -1,21 +1,26 @@
 import os.path
 import sys
+import time
+
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from GUI import *
-from excel2image import *
 from compress import *
+from convertor import Convertor
 
 
 class MyWindow(QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
         super(MyWindow, self).__init__(parent)
         self.setupUi(self)
+        self.convertor = Convertor()
 
     def debugPrint(self, msg):
-        previous = self.plainTextEdit_debug.toPlainText().strip()
-        self.plainTextEdit_debug.setPlainText(previous+'\n'+str(msg))
-        # print(previous+'\n'+str(msg))
+        self.plainTextEdit_debug.appendPlainText(str(msg))
         QApplication.processEvents()
+        # 文本框显示到底部
+        self.plainTextEdit_debug.moveCursor(self.plainTextEdit_debug.textCursor().End)
+        # 睡眠
+        time.sleep(0.1)
 
     def pathFilter(self, path):
         if path.startswith('file://'):
@@ -58,21 +63,30 @@ class MyWindow(QMainWindow, Ui_MainWindow):
             self.debugPrint('>> 不是文件夹！')
         self.pushButton_compress_start.setEnabled(True)
     
-    def excel2image_start(self):  # file:///C:/Users/SXF/Desktop/学术成果一览表.xlsx
-        self.pushButton_excel2image_start.setEnabled(False)
-        self.debugPrint('>> 开始Excel转图片')
-        filePath = self.pathFilter(self.textEdit_excel2image_filePath.toPlainText().strip())
+    def wps2image_start(self):  # file:///C:/Users/SXF/Desktop/学术成果一览表.xlsx
+        self.pushButton_wps2image_start.setEnabled(False)
+        self.debugPrint('>> 开始Excel/Word/()转图片')
+        filePath = self.pathFilter(self.textEdit_wps2image_filePath.toPlainText().strip())
         self.debugPrint(">> 待转换文件为: " + filePath)
         if os.path.exists(filePath):
             try:
-                res = excel2image(filePath, debugPrint=self.debugPrint)
-                if res:
-                    downloadFile(res['FileName'], res['FolderName'], debugPrint=self.debugPrint)
+                if filePath.endswith('xls') or filePath.endswith('xlsx'):
+                    self.convertor.excel2image(filePath, debugPrint=self.debugPrint)
+                elif filePath.endswith('doc'):
+                    # self.debugPrint('>> 先将doc转为docx!(更建议手动转换，自动转可能格式出错)')
+                    # self.convertor.doc2docx(filePath, debugPrint=self.debugPrint)
+                    # filePath = filePath + 'x'
+                    self.convertor.doc2image(filePath, debugPrint=self.debugPrint)
+                elif filePath.endswith('docx'):
+                    self.convertor.word2image(filePath, debugPrint=self.debugPrint)
+
+                else:
+                    self.debugPrint('>> 转换类型不支持!')
             except Exception as e:
                 self.debugPrint(">> 转换出错: "+str(e))
         else:
             self.debugPrint(">> 文件不存在")
-        self.pushButton_excel2image_start.setEnabled(True)
+        self.pushButton_wps2image_start.setEnabled(True)
 
 
 if __name__ == '__main__':
