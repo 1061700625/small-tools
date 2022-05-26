@@ -78,7 +78,8 @@ class MyWindow(QMainWindow, Ui_MainWindow):
                     # filePath = filePath + 'x'
                     self.convertor.doc2image(filePath, debugPrint=self.debugPrint)
                 elif filePath.endswith('docx'):
-                    self.convertor.word2image(filePath, debugPrint=self.debugPrint)
+                    # self.convertor.word2image(filePath, debugPrint=self.debugPrint)
+                    self.convertor.doc2image(filePath, debugPrint=self.debugPrint)
 
                 else:
                     self.debugPrint('>> 转换类型不支持!')
@@ -87,6 +88,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         else:
             self.debugPrint(">> 文件不存在")
         self.pushButton_wps2image_start.setEnabled(True)
+        self.debugPrint(" ")
 
 
 if __name__ == '__main__':

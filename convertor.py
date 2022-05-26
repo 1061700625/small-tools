@@ -1,12 +1,5 @@
-import json
 import os
-import time
-
 import requests
-# import docx2pdf
-import comtypes.client
-import docx2pdf
-import win32com.client
 
 
 class Convertor:
@@ -30,6 +23,7 @@ class Convertor:
             fileName = fileName.split('.')[0] + '.zip'
         else:
             return False
+        debugPrint('>> 开始请求文件下载')
         res = requests.get(url)
         if res.status_code == 200:
             with open(os.path.join(storePath, fileName), 'wb') as f:
@@ -83,11 +77,14 @@ class Convertor:
 
 
     def doc2image(self, filePath, outputType='JPG', debugPrint=print):
+        """
+        https://word2jpg.com/cn
+        """
         fileName = filePath.split(os.sep)[-1]
         storePath = os.path.dirname(filePath)
         def download(id):
             url = r'https://softparade.net/convert'
-            data = 'file={}&from={}&to={}'.format(id, filePath.split('.')[-1], outputType.lower())
+            data = 'file={}&from=doc&to={}'.format(id, outputType.lower())
             headers = {
                 'Host': 'softparade.net',
                 'Origin': 'https://word2jpg.com',
