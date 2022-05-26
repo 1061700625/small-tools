@@ -27,6 +27,14 @@ class MyWindow(QMainWindow, Ui_MainWindow):
             path = path[8:]
         return path
 
+    def wps2image_clear(self):
+        self.textEdit_wps2image_filePath.clear()
+    def uncompress_clear(self):
+        self.textEdit_uncompress_filePath.clear()
+    def compress_clear(self):
+        self.textEdit_compress_filePath.clear()
+
+
     def uncompress_start(self):
         self.pushButton_uncompress_start.setEnabled(False)
         self.debugPrint('>> 开始解压')
