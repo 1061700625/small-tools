@@ -12,6 +12,12 @@
 - `convertor.py`：excel/word转图片相关
 - `main.py`：主入口
 
+## 功能支持
+- 文件夹压缩
+- zip/rar文件解压
+- excel转图片
+- doc/docx转图片
+
 
 ## 效果图
 ![1](https://user-images.githubusercontent.com/31002981/169663001-60e740b0-c297-4c9c-9afe-d311305b8537.png)
